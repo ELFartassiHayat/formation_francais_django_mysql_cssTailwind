@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load widget_tweaks %}  
+
+{% block content %}
+<div class="container mx-auto mt-8 px-4">
+    <h1 class="text-2xl font-bold mb-4 text-blue-600">Inscription à la formation</h1>
+
+    <div class="flex flex-col md:flex-row items-center">
+        <div class="md:w-1/2">
+            <form method="post" class="bg-white p-6 rounded shadow-md">
+                {% csrf_token %}
+                {% for field in form %}
+                    <div class="mb-4">
+                        <label class="block text-gray-700 text-sm font-bold mb-2" for="{{ field.id_for_label }}">
+                            {{ field.label }}
+                        </label>
+                        {{ field|add_class:"border border-gray-300 rounded-lg px-3 py-2 w-full focus:border-blue-500 focus:ring-2 focus:ring-blue-200 outline-none transition duration-200" }}
+                        {% if field.help_text %}
+                            <p class="text-gray-600 text-xs italic">{{ field.help_text }}</p>
+                        {% endif %}
+                        {% if field.errors %}
+                            <p class="text-red-500 text-xs italic">{{ field.errors }}</p>
+                        {% endif %}
+                    </div>
+                {% endfor %}
+                <button type="submit" class="bg-green-500 text-white px-4 py-2 rounded mt-4 hover:bg-green-600">
+                    S'inscrire
+                </button>
+            </form>
+        </div>
+
+        <div class="md:w-1/2 mt-8 md:mt-0 flex justify-end">
+            <img src="{% static 'inscriptions/images/th.jpg' %}" alt="Formation en Français" class="rounded-lg shadow-md">
+        </div>
+    </div>
+</div>
+{% endblock %}

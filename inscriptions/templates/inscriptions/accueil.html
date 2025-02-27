@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="container mx-auto mt-8 px-4">
+    <section class="flex flex-col md:flex-row items-center">
+        <div class="md:w-1/2">
+            <h2 class="text-2xl font-bold text-blue-700">Nos Formations</h2> 
+            <p class="mt-2 text-gray-700">
+                Apprenez le français avec des cours adaptés à votre niveau, que vous soyez débutant, intermédiaire ou avancé. 
+                Nos professeurs qualifiés vous accompagnent dans votre apprentissage grâce à des méthodes interactives et modernes. 
+                Rejoignez-nous dès aujourd'hui pour améliorer vos compétences en français et communiquer avec aisance !
+            </p>
+            <a href="{% url 'inscription' %}" class="mt-4 inline-block bg-green-500 text-white px-6 py-2 rounded hover:bg-green-600">
+                Inscrivez-vous maintenant
+            </a>
+        </div>
+
+        <div class="md:w-1/2 mt-8 md:mt-0 flex justify-end">
+            <img src="{% static 'inscriptions/images/th.jpg' %}" alt="Formation en Français" class="rounded-lg shadow-md">
+        </div>
+    </section>
+
+    <section class="mt-8">
+        <h2 class="text-2xl font-bold text-blue-700">Contactez-nous</h2> 
+        <p class="mt-2 text-gray-700">
+            Vous avez des questions ou souhaitez en savoir plus sur nos formations ? 
+            Contactez-nous directement sur WhatsApp pour discuter avec notre équipe.
+        </p>
+        <a href="https://wa.me/+212777285474?text=Bonjour,%20je%20souhaite%20m'inscrire%20à%20votre%20formation%20en%20français.%20Pouvez-vous%20me%20donner%20plus%20d'informations%20?" class="mt-4 inline-block bg-green-500 text-white px-6 py-2 rounded hover:bg-green-600">
+            Envoyer un message sur WhatsApp
+        </a>
+    </section>
+</div>
+{% endblock %}

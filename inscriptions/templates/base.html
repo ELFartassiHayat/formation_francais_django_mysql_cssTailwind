@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formation en Français</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100 flex flex-col min-h-screen">
+    <header class="bg-blue-700 text-white py-4">
+        <div class="container mx-auto text-center max-w-4xl">  
+            <h1 class="text-4xl font-bold">Formation en Français</h1>
+            <p class="mt-2">Apprenez le français avec des cours adaptés à votre niveau.</p>
+        </div>
+    </header>
+
+   
+    <nav class="bg-red-600 py-2">
+        <div class="container mx-auto flex justify-center space-x-4 max-w-4xl">  
+            <a href="{% url 'accueil' %}" class="text-white px-4 py-2 rounded hover:bg-blue-600">Accueil</a>
+            <a href="{% url 'inscription' %}" class="text-white px-4 py-2 rounded hover:bg-blue-600">Inscription</a>
+            <a href="https://wa.me/+212777285474?text=Bonjour,%20je%20souhaite%20m'inscrire%20à%20votre%20formation%20en%20français.%20Pouvez-vous%20me%20donner%20plus%20d'informations%20?" class="text-white px-4 py-2 rounded hover:bg-blue-600">Contact WhatsApp</a>
+        </div>
+    </nav>
+
+    <main class="container mx-auto mt-8 px-4 flex-grow max-w-4xl"> 
+        {% block content %}{% endblock %}
+    </main>
+
+    
+    <footer class="bg-gray-600 text-white py-4 mt-8 w-full">  
+        <div class="container mx-auto text-center max-w-4xl"> 
+            <p>&copy; 2025 Formation en Français. Tous droits réservés.</p>
+        </div>
+    </footer>
+</body>
+</html>
